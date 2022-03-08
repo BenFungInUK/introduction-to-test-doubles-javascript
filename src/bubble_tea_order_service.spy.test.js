@@ -1,4 +1,4 @@
-const { createOrderRequest } = require('./bubble_tea_order_service');
+const {createOrderRequest} = require('./bubble_tea_order_service');
 const bubbleTeaType = require('./bubble_tea_type');
 const messenger = require('./bubble_tea_messenger');
 const emailSpy = jest.spyOn(messenger, 'sendBubbleTeaOrderRequestEmail');
@@ -44,5 +44,5 @@ test.each([
       expect(orderRequest.digits).toBe(dummyPaymentDetails.debitCard.digits);
       expect(emailSpy).toHaveBeenCalledWith(orderRequest);
       expect(emailSpy).toHaveBeenCalledTimes(1);
-    }
+    },
 );
